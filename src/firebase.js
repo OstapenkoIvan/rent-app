@@ -4,10 +4,8 @@ import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-//realtor-app-b8079 - firebase key
-
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyBJHycuBvnaADsgMa7Jvwhb5miGnKsZmVw",
   authDomain: "realtor-app-b8079.firebaseapp.com",
   projectId: "realtor-app-b8079",

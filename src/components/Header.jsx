@@ -15,11 +15,13 @@ export default function Header() {
       }
     });
   }, [auth]);
+
   function pathMatchRoute(route) {
     if (route === location.pathname) {
       return true;
     }
   }
+
   return (
     <div className="bg-white border-b shadow-sm sticky top-0 z-40">
       <header className="flex justify-between items-center px-3 max-w-6xl mx-auto">

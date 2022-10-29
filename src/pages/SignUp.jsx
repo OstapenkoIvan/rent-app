@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { db } from "../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function SignUp() {
@@ -20,13 +20,15 @@ export default function SignUp() {
     password: "",
   });
   const { name, email, password } = formData;
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
   function onChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
   }
+
   async function onSubmit(e) {
     e.preventDefault();
 
@@ -47,8 +49,8 @@ export default function SignUp() {
       formDataCopy.timestamp = serverTimestamp();
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
-      // toast.success("Sign up was successful");
-      // navigate("/");
+      toast.success("Sign up was successful");
+      navigate("/");
     } catch (error) {
       toast.error("Something went wrong with the registration");
     }

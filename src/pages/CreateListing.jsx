@@ -10,7 +10,7 @@ import {
 import { getAuth } from "firebase/auth";
 import { v4 as uuidv4 } from "uuid";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "../firebase";
+import { db, firebaseConfig } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
 export default function CreateListing() {
@@ -90,7 +90,7 @@ export default function CreateListing() {
     let location;
     if (geolocationEnabled) {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${firebaseConfig.apiKey}`
       );
       const data = await response.json();
       console.log(data);

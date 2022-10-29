@@ -26,7 +26,7 @@ export default function Category() {
         const q = query(
           listingRef,
           where("type", "==", params.categoryName),
-          orderBy("timestamp", "desc"),
+          // orderBy("timestamp", "desc"),
           limit(8)
         );
         const querySnap = await getDocs(q);

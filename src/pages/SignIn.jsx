@@ -51,6 +51,7 @@ export default function SignIn() {
             <input
               type="email"
               id="email"
+              name="email"
               value={email}
               onChange={onChange}
               placeholder="Email address"
@@ -60,6 +61,7 @@ export default function SignIn() {
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
+                name="password"
                 value={password}
                 onChange={onChange}
                 placeholder="Password"
