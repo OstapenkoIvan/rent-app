@@ -28,16 +28,19 @@ export default function Profile() {
     email: auth.currentUser.email,
   });
   const { name, email } = formData;
+
   function onLogout() {
     auth.signOut();
     navigate("/");
   }
+
   function onChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
   }
+
   async function onSubmit() {
     try {
       if (auth.currentUser.displayName !== name) {
